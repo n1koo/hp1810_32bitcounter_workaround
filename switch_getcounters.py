@@ -81,10 +81,10 @@ while True:
 			portstatus[i]["last_in"] = inOct[i]
 			portstatus[i]["last_out"] = outOct[i]
 				 
-			csvwrite.writerow([i+1, portstatus[i]["cur_in"],
-			portstatus[i]["cur_out"],
-			portstatus[i]["last_in"],
-			portstatus[i]["last_out"] ])
+		csvwrite.writerow([i+1, portstatus[i]["cur_in"],
+		portstatus[i]["cur_out"],
+		portstatus[i]["last_in"],
+		portstatus[i]["last_out"] ])
 
 	outfile.flush()
 	stop = time.time()
