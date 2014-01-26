@@ -1,0 +1,33 @@
+#!/usr/bin/python
+import csv, sys
+ 
+FILENAME="/tmp/switching.csv"
+try:
+	infile = file(FILENAME, "rb")
+	csvread = csv.reader(infile)
+except:
+	print "recv.value U"
+	print "send.value U"
+	sys.exit(1)
+ 
+#munin_args = sys.argv[0].split("_")
+iface = 1
+try:
+	if len(sys.argv) > 1:
+		iface = int(sys.argv[1])
+except:
+	pass
+ 
+i=0
+out = False
+for row in csvread:
+	i+=1
+	if i != iface:
+		continue 
+	out = True
+	print "recv.value %s" % row[1]
+	print "send.value %s" % row[2]
+	 
+if not out:
+	print "recv.value U"
+	print "send.value U"
