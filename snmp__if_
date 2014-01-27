@@ -207,7 +207,8 @@ if ($ARGV[0] and $ARGV[0] eq "config") {
     }
 
     #if speed wasnt detected properly on my 1810v2 so magic number ftw
-    $speed = 1073741824;
+   # $speed = 1073741824;
+     $speed = 1000000000;
 
     print "graph_title Interface $alias traffic\n";
     print "graph_order recv send\n";

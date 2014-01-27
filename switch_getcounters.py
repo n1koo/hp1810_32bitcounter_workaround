@@ -78,8 +78,9 @@ while True:
 			portstatus[i]["cur_out"] += INT_MAX - (portstatus[i]["last_out"] - outOct[i])
 		else:
 			portstatus[i]["cur_out"] += outOct[i] - portstatus[i]["last_out"]	 
-			portstatus[i]["last_in"] = inOct[i]
-			portstatus[i]["last_out"] = outOct[i]
+		
+		portstatus[i]["last_in"] = inOct[i]
+		portstatus[i]["last_out"] = outOct[i]
 				 
 		csvwrite.writerow([i+1, portstatus[i]["cur_in"],
 		portstatus[i]["cur_out"],
